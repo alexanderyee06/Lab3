@@ -15,16 +15,16 @@
         <strong><h1>Simple Note Keeper</h1></strong>
         <strong><h2>View Note</h2></strong>
         
-        <form>
+        <form action="note" method="post">
             <p>
                 <label>
                 Title:
-                <input type="text">
+                <input type="text" name="title">
                 </label><br>
             </p>
             <p>
                 <label for="contents">Contents:</label>
-                <textarea id="contents"></textarea>
+                <textarea id="contents" name="contents"></textarea>
             </p>
             
             <button type="submit">Submit</button>

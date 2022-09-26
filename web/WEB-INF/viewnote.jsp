@@ -17,13 +17,13 @@
         
         <p>
             <strong>Title:</strong>
-            ${note.title};
+            ${note.title}
         </p>
         <p>
             <strong>Contents:</strong><br>
-            ${note.contents};
+            ${note.contents}
         </p>
         
-        <a href="#">Edit</a>
+        <a href="note?edit">Edit</a>
     </body>
 </html>
