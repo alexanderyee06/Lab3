@@ -1,7 +1,7 @@
 package ca.sait.servlets;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import ca.sait.models.Note;
+import java.io.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,9 +25,18 @@ public class NoteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+            String path = getServletContext().getRealPath("/WEB-INF/note.txt");
+            // to read files
+            BufferedReader br = new BufferedReader(new FileReader(new File(path)));
 
+            String title = br.readLine();
+            String contents = br.readLine();
 
-        this.getServletContext().getRequestDispatcher("/WEB-INF/editnote.jsp").forward(request, response);
+        Note note = new Note(title, contents);
+
+        request.setAttribute("note", note);
+
+        this.getServletContext().getRequestDispatcher("/WEB-INF/viewnote.jsp").forward(request, response);
     }
 
     /**

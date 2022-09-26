@@ -16,12 +16,18 @@
         <strong><h2>View Note</h2></strong>
         
         <form>
-            <label>
+            <p>
+                <label>
                 Title:
                 <input type="text">
-            </label><br>
-            <label for="contents">Contents:</label>
-            <textarea id="contents"></textarea>
+                </label><br>
+            </p>
+            <p>
+                <label for="contents">Contents:</label>
+                <textarea id="contents"></textarea>
+            </p>
+            
+            <button type="submit">Submit</button>
         </form>
         
     </body>
